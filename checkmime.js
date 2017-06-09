@@ -57,17 +57,34 @@ for (i in types) {
   var mse_td = document.createElement('td');
   mse_td.textContent = mse_result;
   if (mse_result) {
-    row.className = 'green';
+    mse_td.className = 'darkgreen';
+  } else {
+    mse_td.className = 'gray';
   }
   row.appendChild(mse_td);
 
-  var video_result = document.createElement('td');
-  video_result.textContent = video.canPlayType(type);
-  row.append(video_result);
+  var video_td = document.createElement('td');
+  var video_result = video.canPlayType(type);
+  video_td.textContent = video_result;
+  if (video_result == 'probably') {
+    video_td.className = 'darkgreen';
+  } else if (video_result == '') {
+    video_td.className = 'gray';
+  }
+  row.append(video_td);
 
-  var audio_result = document.createElement('td');
-  audio_result.textContent = audio.canPlayType(type);
-  row.append(audio_result);
+  var audio_td = document.createElement('td');
+  var audio_result = audio.canPlayType(type);
+  audio_td.textContent = audio_result;
+  if (audio_result == 'probably') {
+    audio_td.className = 'darkgreen';
+  } else if (audio_result == '') {
+    audio_td.className = 'gray';
+  }
+  row.append(audio_td);
 
+  if (mse_result || video_result || audio_result) {
+    row.className = 'green';
+  }
   table.appendChild(row);
 }
