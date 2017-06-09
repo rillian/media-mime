@@ -44,28 +44,28 @@ row.appendChild(h);
 table.appendChild(row);
 
 for (i in types) {
-  let type = types[i];
-  let audio = new Audio();
-  let video = document.createElement('video');
-  let row = document.createElement('tr');
+  var type = types[i];
+  var audio = new Audio();
+  var video = document.createElement('video');
+  var row = document.createElement('tr');
 
-  let label = document.createElement('td');
+  var label = document.createElement('td');
   label.textContent = type;
   row.appendChild(label);
 
-  let mse_result = MediaSource.isTypeSupported(type);
-  let mse_td = document.createElement('td');
+  var mse_result = MediaSource.isTypeSupported(type);
+  var mse_td = document.createElement('td');
   mse_td.textContent = mse_result;
   if (mse_result) {
     row.className = 'green';
   }
   row.appendChild(mse_td);
 
-  let video_result = document.createElement('td');
+  var video_result = document.createElement('td');
   video_result.textContent = video.canPlayType(type);
   row.append(video_result);
 
-  let audio_result = document.createElement('td');
+  var audio_result = document.createElement('td');
   audio_result.textContent = audio.canPlayType(type);
   row.append(audio_result);
 
