@@ -26,6 +26,12 @@ types = [
   'audio/wav',
 ]
 
+// Check if MediaSource.isTypeSupported is supported
+// or fall back to a function which always returns false.
+var isTypeSupported = MediaSource.isTypeSupported || function(type) {
+  return false;
+}
+
 var table = document.getElementById('results')
 
 var row = document.createElement('tr');
@@ -53,7 +59,7 @@ for (i in types) {
   label.textContent = type;
   row.appendChild(label);
 
-  var mse_result = MediaSource.isTypeSupported(type);
+  var mse_result = isTypeSupported(type);
   var mse_td = document.createElement('td');
   mse_td.textContent = mse_result;
   if (mse_result) {
