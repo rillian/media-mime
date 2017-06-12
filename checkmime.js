@@ -12,6 +12,10 @@ types = [
   'video/mp4; codecs=vp9',
   'video/mp4; codecs=av1',
 
+  'video/mp4; codecs=mp3',
+  'video/mp4; codecs=aac',
+  'video/mp4; codecs=opus',
+
   'audio/ogg',
   'audio/ogg; codecs=vorbis',
   'audio/ogg; codecs=opus',
