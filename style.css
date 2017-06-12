@@ -1,3 +1,18 @@
+body {
+  background-color: #eef;
+  font: 12pt "Fira Sans", sans-serif;
+  font-weight: 300;
+}
+
+h1 {
+  font: 24pt "Fira Sans", sans-serif;
+}
+
+td.label {
+  font-style: italic;
+  font-weight: 400;
+}
+
 .green {
   background-color: #7c7;
 }

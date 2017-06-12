@@ -61,6 +61,7 @@ for (i in types) {
 
   var label = document.createElement('td');
   label.textContent = type;
+  label.className = 'label';
   row.appendChild(label);
 
   var mse_result = isTypeSupported(type);
